@@ -9,6 +9,16 @@
 
 -- INSERT YOUR CODE HERE
 
+local st = getmetatable("").__index
+
+function st:starts_with(str)
+  return string.sub(self, 1, #str) == str
+end
+
+function st:ends_with(str)
+  if #str > #self then return false end
+  return string.sub(self, -#str) == str
+end
 
 -- END OF CODE INSERT
 
